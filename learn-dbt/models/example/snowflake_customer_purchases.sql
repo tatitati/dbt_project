@@ -1,4 +1,4 @@
-{{ config(materialized='table') }}
+{{ config(materialized="view") }}
 
 select 
     c.c_custkey,
