@@ -10,6 +10,10 @@ models:
             tests:
                 - unique
                 - not_null
+                - accepted_values:
+                    values: [1, 2]
+                    quote: false
+
 
     - name: my_second_dbt_model
       description: "A starter dbt model"
@@ -28,5 +32,5 @@ models:
                 - unique
                 - not_null
 
-    - name: cumulative_orders_by_date
-      description: "the total purchases for each customer in snowflake sample data"      
+    - name: cumulative_orders_by_date 
+    - name: dates
