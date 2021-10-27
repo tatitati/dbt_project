@@ -8,8 +8,5 @@ select
 from "SNOWFLAKE_SAMPLE_DATA"."TPCH_SF1"."CUSTOMER" c
 left join "SNOWFLAKE_SAMPLE_DATA"."TPCH_SF1"."ORDERS" o
 on c.c_custkey = o.o_custkey
-group by 
-    c.c_custkey,
-    c.c_name,
-    c.c_nationkey
+{{group_by(3)}} -- same than group by 1,2,3, but using custom macro
 having sum(o.o_totalprice) > 0
