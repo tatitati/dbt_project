@@ -2,9 +2,11 @@
 
 with source_data as (
 
-    select 1 as id, 'CA' as state, CURRENT_TIMESTAMP as updated_at
+    select 1 as id, 'CA' as state, CURRENT_TIMESTAMP as created_at
     union all
-    select null as id, 'CT' as state, CURRENT_TIMESTAMP as updated_at    
+    select 2 as id, 'CT' as state, CURRENT_TIMESTAMP as created_at    
+    union all
+    select 3 as id, 'CX' as state, CURRENT_TIMESTAMP as created_at    
 )
 
 select *
