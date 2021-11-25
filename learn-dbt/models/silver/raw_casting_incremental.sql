@@ -1,5 +1,5 @@
 
-{{ config(materialized="incremental") }}
+{{ config(materialized="incremental", unique_key='id') }}
 
 
 select *,  current_timestamp() as transformed_at
@@ -7,5 +7,10 @@ select *,  current_timestamp() as transformed_at
     where created_at <= current_timestamp
 
     {% if is_incremental() %}
-        and created_at > (select max(created_at) from {{ this }})
+        and created_at > (select max(created_at) from {{ this }}) or
+        (
+            updated_at is not null and 
+            updated_at > (select max(updated_at) from {{ this }})
+        )
+        
     {% endif %}
