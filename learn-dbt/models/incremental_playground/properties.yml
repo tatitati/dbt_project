@@ -1,0 +1,9 @@
+
+version: 2
+
+sources:
+  - name: source_incremental
+    database: dbt_project_tutorial # Tell dbt to look for the source in the "raw"
+    schema: de_incremental
+    tables:
+      - name: raw_casting_incremental

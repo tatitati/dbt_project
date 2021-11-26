@@ -33,9 +33,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
     my_dbt_project:        
-        bronze:
+        raw:
             materialized: table
-            schema: bronze
-        silver:
+            schema: raw
+        incremental_playground:
             materialized: table
-            schema: silver
+            schema: incremental

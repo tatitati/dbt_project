@@ -2,8 +2,8 @@
 version: 2
 
 sources:
-  - name: debronze_raw
+  - name: raw
     database: dbt_project_tutorial # Tell dbt to look for the source in the "raw"
-    schema: de_bronze
+    schema: de_raw
     tables:
       - name: raw_table
